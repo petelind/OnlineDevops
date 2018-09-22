@@ -80,8 +80,36 @@ WSGI_APPLICATION = 'mysite.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
+        'ENGINE': 'django.db.backends.postgresql',
+        'NAME': 'devops_course',
+        'USER': 'test',
+        'PASSWORD': os.getenv('MYSQL_PASSWORD'),
+        'HOST': 'localhost',
+        'PORT': '',
+    },
+    'test': {
+        'ENGINE': 'django.db.backends.postgresql',
+        'NAME': 'test_devops_course',
+        'USER': 'test',
+        'PASSWORD': os.getenv('MYSQL_PASSWORD'),
+        'HOST': 'localhost',
+        'PORT': '',
+    },
+    'staging': {
+        'ENGINE': 'django.db.backends.postgresql',
+        'NAME': 'staging_devops',
+        'USER': 'test',
+        'PASSWORD': os.getenv('MYSQL_PASSWORD'),
+        'HOST': 'localhost',
+        'PORT': '',
+    },
+    'test_staging': {
+        'ENGINE': 'django.db.backends.postgresql',
+        'NAME': 'test_staging_devops',
+        'USER': 'test',
+        'PASSWORD': os.getenv('MYSQL_PASSWORD'),
+        'HOST': 'localhost',
+        'PORT': '',
     }
 }
 
